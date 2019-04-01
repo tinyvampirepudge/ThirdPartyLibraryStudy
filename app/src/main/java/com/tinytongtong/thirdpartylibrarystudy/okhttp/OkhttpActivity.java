@@ -9,12 +9,14 @@ import android.widget.Button;
 
 import com.tinytongtong.thirdpartylibrarystudy.R;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -85,6 +87,30 @@ public class OkhttpActivity extends AppCompatActivity {
         });
     }
 
+    private void cacheRequest() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .cache(new Cache(new File("cache"), 24 * 1024 * 1024))
+                .build();
+
+        Request request = new Request.Builder()
+                .url("http://www.baidu.com")
+                .build();
+
+        Call call = client.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
+    }
+
     @OnClick(R.id.btn_sync)
     public void onBtnSyncClicked() {
         synRequest();
@@ -93,5 +119,10 @@ public class OkhttpActivity extends AppCompatActivity {
     @OnClick(R.id.btn_async)
     public void onBtnAsyncClicked() {
         asyncRequest();
+    }
+
+    @OnClick(R.id.btn_cache_interceptor)
+    public void onBtnCacheInterceptorClicked() {
+        cacheRequest();
     }
 }
