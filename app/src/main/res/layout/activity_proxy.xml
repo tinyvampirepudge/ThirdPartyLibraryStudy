@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".retrofit.proxy.ProxyActivity">
+
+    <Button
+        android:id="@+id/btn_proxy_static"
+        style="@style/btn_style_lower"
+        android:text="静态代理模式"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_proxy_dynamic"
+        style="@style/btn_style_lower"
+        android:text="动态代理模式——InvocationHandler"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_proxy_static" />
+
+    <Button
+        android:id="@+id/btn_proxy_dynamic_cglib"
+        style="@style/btn_style_lower"
+        android:text="动态代理模式——cglib"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_proxy_dynamic" />
+
+    <Button
+        android:id="@+id/btn_proxy_dynamic_api"
+        style="@style/btn_style_lower"
+        android:text="动态代理模式——通过编译期提供的API动态创建代理类"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_proxy_dynamic_cglib" />
+
+</android.support.constraint.ConstraintLayout>

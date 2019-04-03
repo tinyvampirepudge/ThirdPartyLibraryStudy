@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
+import com.tinytongtong.thirdpartylibrarystudy.retrofit.RetrofitActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_retrofit)
     public void onBtnRetrofitClicked() {
+        RetrofitActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_glide)
