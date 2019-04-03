@@ -111,6 +111,63 @@ public class OkhttpActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 给client添加应用拦截器。
+     * 这个链接会重定向到https，请求和相应的log只会打印一次。
+     */
+    private void addApplicationInterceptor() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new LoggingInterceptor())
+                .build();
+
+        Request request = new Request.Builder()
+                .url("http://www.publicobject.com/helloworld.txt")
+                .build();
+
+        Call call = client.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e(TAG, "failure");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.e(TAG, "success");
+                Log.e(TAG, "response:" + response.body().string());
+            }
+        });
+    }
+
+    /**
+     * 添加网络拦截器
+     */
+    private void addNetworkInterceptor() {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addNetworkInterceptor(new LoggingInterceptor())
+                .build();
+
+        Request request = new Request.Builder()
+                .url("http://www.publicobject.com/helloworld.txt")
+                .build();
+
+        Call call = client.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e(TAG, "failure");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.e(TAG, "success");
+                Log.e(TAG, "response:" + response.body().string());
+            }
+        });
+    }
+
     @OnClick(R.id.btn_sync)
     public void onBtnSyncClicked() {
         synRequest();
@@ -125,4 +182,15 @@ public class OkhttpActivity extends AppCompatActivity {
     public void onBtnCacheInterceptorClicked() {
         cacheRequest();
     }
+
+    @OnClick(R.id.btn_application_interceptor)
+    public void onBtnApplicationInterceptorClicked() {
+        addApplicationInterceptor();
+    }
+
+    @OnClick(R.id.btn_network_interceptor)
+    public void onBtnNetworkInterceptorClicked() {
+        addNetworkInterceptor();
+    }
+
 }
