@@ -45,5 +45,5 @@ dependencies {
     implementation files('libs/cglib-3.2.10.jar')
     // cglib依赖的asm
     // https://mvnrepository.com/artifact/org.ow2.asm/asm
-    implementation 'org.ow2.asm:asm:6.0'
+//    implementation 'org.ow2.asm:asm:6.0'
 }
