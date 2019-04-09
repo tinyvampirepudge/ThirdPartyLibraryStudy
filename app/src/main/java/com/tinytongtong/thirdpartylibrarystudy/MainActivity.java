@@ -6,6 +6,7 @@ import android.widget.Button;
 
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
 import com.tinytongtong.thirdpartylibrarystudy.retrofit.RetrofitActivity;
+import com.tinytongtong.thirdpartylibrarystudy.rxjava.RxJavaActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_rxjava)
     public void onBtnRxjavaClicked() {
+        RxJavaActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_picasso)

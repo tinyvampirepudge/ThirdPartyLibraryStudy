@@ -46,4 +46,8 @@ dependencies {
     // cglib依赖的asm
     // https://mvnrepository.com/artifact/org.ow2.asm/asm
 //    implementation 'org.ow2.asm:asm:6.0'
+
+    // rxjava
+    implementation 'io.reactivex:rxjava:1.1.3'
+    implementation 'io.reactivex:rxandroid:1.1.0'
 }
