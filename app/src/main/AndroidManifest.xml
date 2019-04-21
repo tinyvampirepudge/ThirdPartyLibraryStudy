@@ -22,7 +22,8 @@
         <activity android:name=".okhttp.OkhttpActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".retrofit.proxy.ProxyActivity" />
-        <activity android:name=".rxjava.RxJavaActivity"></activity>
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".glide.GlideActivity"></activity>
     </application>
 
 </manifest>
