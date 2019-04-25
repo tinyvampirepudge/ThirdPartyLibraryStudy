@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,7 +24,13 @@
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".retrofit.proxy.ProxyActivity" />
         <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".glide.GlideActivity"></activity>
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".leakcanary.LeakCanaryActivity" />
+        <activity android:name=".leakcanary.WeakReferenceActivity" />
+        <activity android:name=".leakcanary.HandlerLeakActivity" />
+        <activity android:name=".leakcanary.NonStaticInnerClassLeakActivity" />
+        <activity android:name=".leakcanary.ThreadLeakActivity" />
+        <activity android:name=".leakcanary.WebviewLeakActivity"></activity>
     </application>
 
 </manifest>

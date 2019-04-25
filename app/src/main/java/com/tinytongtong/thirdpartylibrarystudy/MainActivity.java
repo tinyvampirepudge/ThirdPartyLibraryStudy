@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import com.tinytongtong.thirdpartylibrarystudy.glide.GlideActivity;
+import com.tinytongtong.thirdpartylibrarystudy.leakcanary.LeakCanaryActivity;
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
 import com.tinytongtong.thirdpartylibrarystudy.retrofit.RetrofitActivity;
 import com.tinytongtong.thirdpartylibrarystudy.rxjava.RxJavaActivity;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_leakcanary)
     public void onBtnLeakcanaryClicked() {
+        LeakCanaryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_butterknife)
