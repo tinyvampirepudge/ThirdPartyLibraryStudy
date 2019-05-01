@@ -2,7 +2,9 @@ package com.tinytongtong.thirdpartylibrarystudy;
 
 import android.app.Application;
 
+import com.github.moduth.blockcanary.BlockCanary;
 import com.squareup.leakcanary.LeakCanary;
+import com.tinytongtong.thirdpartylibrarystudy.blockcanary.AppBlockCanaryContext;
 
 /**
  * @Description: TODO
@@ -20,5 +22,8 @@ public class MyApplication extends Application {
             return;
         }
         LeakCanary.install(this);
+
+        // Do it on main process
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
     }
 }

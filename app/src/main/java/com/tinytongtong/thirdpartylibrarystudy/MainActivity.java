@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.tinytongtong.thirdpartylibrarystudy.blockcanary.BlockCanaryActivity;
 import com.tinytongtong.thirdpartylibrarystudy.glide.GlideActivity;
 import com.tinytongtong.thirdpartylibrarystudy.leakcanary.LeakCanaryActivity;
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_blockcanary)
     public void onBtnBlockcanaryClicked() {
+        BlockCanaryActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_eventbus)

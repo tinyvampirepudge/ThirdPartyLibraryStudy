@@ -30,7 +30,8 @@
         <activity android:name=".leakcanary.HandlerLeakActivity" />
         <activity android:name=".leakcanary.NonStaticInnerClassLeakActivity" />
         <activity android:name=".leakcanary.ThreadLeakActivity" />
-        <activity android:name=".leakcanary.WebviewLeakActivity"></activity>
+        <activity android:name=".leakcanary.WebviewLeakActivity" />
+        <activity android:name=".blockcanary.BlockCanaryActivity"></activity>
     </application>
 
 </manifest>
