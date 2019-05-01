@@ -3,6 +3,10 @@ package com.tinytongtong.thirdpartylibrarystudy.leakcanary;
 import android.content.Context;
 import android.util.Log;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @Description: Static方法导致的内存泄漏
  * @Author wangjianzhou@qding.me
@@ -22,5 +26,8 @@ public class StaticUtil {
         mContext = context;
         String result = mContext.getPackageName();
         Log.e(TAG, result);
+        List<String> simpleList = Arrays.asList("Hello","world");
+
+//        List<String> simpleList = List.of("Hello","world");
     }
 }
