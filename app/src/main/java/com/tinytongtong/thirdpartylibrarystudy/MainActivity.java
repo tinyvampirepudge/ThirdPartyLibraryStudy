@@ -2,14 +2,22 @@ package com.tinytongtong.thirdpartylibrarystudy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.tinytongtong.thirdpartylibrarystudy.blockcanary.BlockCanaryActivity;
+import com.tinytongtong.thirdpartylibrarystudy.eventbus.DanDanEvent;
+import com.tinytongtong.thirdpartylibrarystudy.eventbus.EventBusActivity;
 import com.tinytongtong.thirdpartylibrarystudy.glide.GlideActivity;
 import com.tinytongtong.thirdpartylibrarystudy.leakcanary.LeakCanaryActivity;
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
 import com.tinytongtong.thirdpartylibrarystudy.retrofit.RetrofitActivity;
 import com.tinytongtong.thirdpartylibrarystudy.rxjava.RxJavaActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        EventBus.getDefault().register(this);
     }
 
     @OnClick(R.id.btn_okhttp)
@@ -76,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_eventbus)
     public void onBtnEventbusClicked() {
+        EventBusActivity.actionStart(this);
     }
 
     @OnClick(R.id.btn_dagger2)
@@ -89,5 +99,31 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_picasso)
     public void onBtnPicassoClicked() {
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe()
+    public void onEventBusDefaultTest(DanDanEvent event) {
+        Log.d("EventBusTest", "onEventBusDefaultTest thread:" + Thread.currentThread().getName());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventBusMainTest(DanDanEvent event) {
+        Log.d("EventBusTest", "onEventBusMainTest thread:" + Thread.currentThread().getName());
+    }
+
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    public void onEventBusBackgroundTest(DanDanEvent event) {
+        Log.d("EventBusTest", "onEventBusBackgroundTest thread:" + Thread.currentThread().getName());
+    }
+
+    @Subscribe(threadMode = ThreadMode.ASYNC)
+    public void onEventBusAsyncTest(DanDanEvent event) {
+        Log.d("EventBusTest", "onEventBusAsyncTest thread:" + Thread.currentThread().getName());
     }
 }

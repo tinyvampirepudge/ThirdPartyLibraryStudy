@@ -31,7 +31,8 @@
         <activity android:name=".leakcanary.NonStaticInnerClassLeakActivity" />
         <activity android:name=".leakcanary.ThreadLeakActivity" />
         <activity android:name=".leakcanary.WebviewLeakActivity" />
-        <activity android:name=".blockcanary.BlockCanaryActivity"></activity>
+        <activity android:name=".blockcanary.BlockCanaryActivity" />
+        <activity android:name=".eventbus.EventBusActivity"></activity>
     </application>
 
 </manifest>
