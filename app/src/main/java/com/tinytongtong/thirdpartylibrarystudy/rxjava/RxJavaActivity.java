@@ -235,12 +235,9 @@ public class RxJavaActivity extends AppCompatActivity {
                     }
                 })
                 .observeOn(Schedulers.newThread())
-                .map(new Func1<String, String>() {
-                    @Override
-                    public String call(String s) {
-                        Log.e(TAG, "map OnSubscribe currentThread:" + Thread.currentThread());
-                        return "我是" + s;
-                    }
+                .map(s -> {
+                    Log.e(TAG, "map OnSubscribe currentThread:" + Thread.currentThread());
+                    return "我是" + s;
                 })
                 .observeOn(Schedulers.computation())
                 .subscribe(new Subscriber<String>() {

@@ -4,6 +4,8 @@
     package="com.tinytongtong.thirdpartylibrarystudy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MyApplication"
@@ -20,19 +22,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".okhttp.OkhttpActivity" />
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".retrofit.proxy.ProxyActivity" />
-        <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".leakcanary.LeakCanaryActivity" />
-        <activity android:name=".leakcanary.WeakReferenceActivity" />
-        <activity android:name=".leakcanary.HandlerLeakActivity" />
-        <activity android:name=".leakcanary.NonStaticInnerClassLeakActivity" />
-        <activity android:name=".leakcanary.ThreadLeakActivity" />
-        <activity android:name=".leakcanary.WebviewLeakActivity" />
-        <activity android:name=".blockcanary.BlockCanaryActivity" />
-        <activity android:name=".eventbus.EventBusActivity"></activity>
+        <activity
+            android:name=".okhttp.OkhttpActivity"
+            android:label="OkHttp" />
+        <activity
+            android:name=".retrofit.RetrofitActivity"
+            android:label="Retrofit" />
+        <activity
+            android:name=".retrofit.proxy.ProxyActivity"
+            android:label="Proxy" />
+        <activity
+            android:name=".rxjava.RxJavaActivity"
+            android:label="RxJava" />
+        <activity
+            android:name=".glide.GlideActivity"
+            android:label="Glide" />
+        <activity
+            android:name=".leakcanary.LeakCanaryActivity"
+            android:label="LeakCanary" />
+        <activity
+            android:name=".leakcanary.WeakReferenceActivity"
+            android:label="WeakReference" />
+        <activity
+            android:name=".leakcanary.HandlerLeakActivity"
+            android:label="HandlerLeak" />
+        <activity
+            android:name=".leakcanary.NonStaticInnerClassLeakActivity"
+            android:label="NonStaticInnerClassLeak" />
+        <activity
+            android:name=".leakcanary.ThreadLeakActivity"
+            android:label="ThreadLeak" />
+        <activity
+            android:name=".leakcanary.WebviewLeakActivity"
+            android:label="WebviewLeak" />
+        <activity
+            android:name=".blockcanary.BlockCanaryActivity"
+            android:label="BlockCanary" />
+        <activity
+            android:name=".eventbus.EventBusActivity"
+            android:label="EventBus" />
+        <activity
+            android:name=".picasso.PicassoActivity"
+            android:label="Picasso" />
     </application>
 
 </manifest>

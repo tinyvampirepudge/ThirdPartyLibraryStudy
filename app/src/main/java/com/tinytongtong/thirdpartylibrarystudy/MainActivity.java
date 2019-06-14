@@ -12,6 +12,7 @@ import com.tinytongtong.thirdpartylibrarystudy.eventbus.EventBusActivity;
 import com.tinytongtong.thirdpartylibrarystudy.glide.GlideActivity;
 import com.tinytongtong.thirdpartylibrarystudy.leakcanary.LeakCanaryActivity;
 import com.tinytongtong.thirdpartylibrarystudy.okhttp.OkhttpActivity;
+import com.tinytongtong.thirdpartylibrarystudy.picasso.PicassoActivity;
 import com.tinytongtong.thirdpartylibrarystudy.retrofit.RetrofitActivity;
 import com.tinytongtong.thirdpartylibrarystudy.rxjava.RxJavaActivity;
 
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_picasso)
     public void onBtnPicassoClicked() {
+        PicassoActivity.actionStart(this);
     }
 
     @Override
